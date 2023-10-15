@@ -2,7 +2,6 @@ package ryan.ufm;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.screen.v1.ScreenEvents;
-import net.minecraft.client.MinecraftClient;
 
 public class UFM implements ModInitializer {
     private boolean ufmFlag = false;
@@ -13,7 +12,7 @@ public class UFM implements ModInitializer {
             if (ufmFlag) return;
             ufmFlag = true;
 
-            ((IWindow) (AutoCloseable) MinecraftClient.getInstance().getWindow()).ufm$override();
+            ((IWindow) (AutoCloseable) client.getWindow()).ufm$override();
         });
     }
 }

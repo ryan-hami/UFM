@@ -27,9 +27,9 @@ public abstract class WindowMixin implements IWindow {
 
         VideoMode vm = monitor.getCurrentVideoMode();
 
-        // must sacrifice a column of pixels because otherwise Windows assumes the application is fullscreen
-        int w = vm.getWidth() - 1;
-        int h = vm.getHeight();
+        int w = vm.getWidth();
+        // push a line of pixels below the screen
+        int h = vm.getHeight() + 1;
 
         windowedWidth = w;
         windowedHeight = h;
